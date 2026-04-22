@@ -17,7 +17,7 @@ if (!$postId || !is_numeric($postId)) {
 $postId = (int)$postId;
 
 $postController = new PostController();
-$result = $postController->update($postId);
+$result = $postController->update($postId, 'posts_list.php');
 $post = $result['post'];
 $errors = $result['errors'] ?? [];
 $activeNav = 'posts';
@@ -81,7 +81,7 @@ $activeNav = 'posts';
             <div class="col-lg-8 mx-auto">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST" action="post_edit.php?id=<?php echo (int)$post['id']; ?>">
+                        <form method="POST" action="post_edit.php?id=<?php echo (int)$post['id']; ?>" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?php echo (int)$post['id']; ?>">
 
                             <div class="mb-3">
@@ -94,6 +94,21 @@ $activeNav = 'posts';
                                 <label for="content" class="form-label fw-bold">Contenu <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="content" name="content"
                                           rows="12" required><?php echo htmlspecialchars($post['content']); ?></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Photo</label>
+                                <?php if (!empty($post['image_path'])): ?>
+                                    <div class="mb-2">
+                                        <img src="../<?php echo htmlspecialchars($post['image_path']); ?>" alt="" style="max-width:200px;max-height:200px;border-radius:4px;">
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="remove_image" name="remove_image" value="1">
+                                        <label for="remove_image" class="form-check-label">Supprimer la photo actuelle</label>
+                                    </div>
+                                <?php endif; ?>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/jpeg,image/png,image/gif,image/webp">
+                                <small class="text-secondary">JPG, PNG, GIF ou WEBP &middot; 5 Mo max</small>
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center">
