@@ -72,6 +72,34 @@ class Post {
     }
 
     /**
+     * Get all posts with comment count
+     */
+    public function getAllWithCommentCount() {
+        $query = "SELECT p.*, u.nom as author_name, 
+                         (SELECT COUNT(*) FROM comments c WHERE c.post_id = p.id) AS comment_count
+                  FROM " . $this->table . " p 
+                  LEFT JOIN user u ON p.author_id = u.id 
+                  ORDER BY p.created_at DESC";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Count comments for a given post
+     */
+    public function countComments($post_id) {
+        $query = "SELECT COUNT(*) AS cnt FROM comments WHERE post_id = :post_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return (int)($row['cnt'] ?? 0);
+    }
+
+    /**
      * Update post
      */
     public function update() {
