@@ -2,10 +2,10 @@
 session_start();
 require_once __DIR__ . '/../controllers/PostController.php';
 
-if (!isset($_POST['post_id']) || !is_numeric($_POST['post_id'])) {
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header('Location: posts_list.php');
     exit;
 }
 
 $postController = new PostController();
-$postController->addComment((int)$_POST['post_id']);
+$postController->deleteComment((int)$_GET['id']);

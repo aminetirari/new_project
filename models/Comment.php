@@ -57,12 +57,28 @@ class Comment {
     }
 
     /**
+     * Get a comment by its ID (with author name)
+     */
+    public function getById($id) {
+        $query = "SELECT c.*, u.nom as user_name 
+                  FROM " . $this->table . " c 
+                  LEFT JOIN user u ON c.user_id = u.id 
+                  WHERE c.id = :id";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    /**
      * Delete comment
      */
     public function delete() {
         $query = "DELETE FROM " . $this->table . " WHERE id = :id";
         $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':id', $this->id);
+        $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
         return $stmt->execute();
     }
 }

@@ -65,6 +65,11 @@
 									</ul>
 								</li>
 								<li><a href="about.html">À propos</a></li>
+								<li><a href="posts_list.php">Blog</a>
+									<ul class="sub-menu">
+										<li><a href="posts_list.php">Tous les posts</a></li>
+									</ul>
+								</li>
 								<li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.html">Page 404</a></li>
