@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="NutriMind - Blog Post">
+
+	<!-- title -->
+	<title>Posts - NutriMind</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<style>
+		.single-article-section {
+			background: #f9f9f9;
+			padding: 30px;
+			border-radius: 5px;
+			margin-bottom: 40px;
+		}
+
+		.single-artcile-bg {
+			margin-bottom: 20px;
+		}
+
+		.single-artcile-bg img {
+			width: 100%;
+			height: auto;
+			border-radius: 5px;
+		}
+
+		.blog-meta {
+			margin: 20px 0;
+			font-size: 14px;
+			color: #666;
+		}
+
+		.blog-meta span {
+			margin-right: 20px;
+		}
+
+		.single-article-text p {
+			line-height: 1.8;
+			color: #333;
+			margin-bottom: 15px;
+		}
+
+		.comments-section {
+			margin-top: 50px;
+			border-top: 2px solid #e0e0e0;
+			padding-top: 30px;
+		}
+
+		.comments-section h3 {
+			font-size: 24px;
+			margin-bottom: 30px;
+			font-weight: bold;
+		}
+
+		.comment {
+			margin-bottom: 30px;
+			padding: 20px;
+			background: #fff;
+			border-left: 3px solid #ff6b6b;
+			border-radius: 3px;
+		}
+
+		.comment-author {
+			margin-bottom: 10px;
+		}
+
+		.comment-author strong {
+			font-size: 16px;
+			color: #333;
+		}
+
+		.comment-date {
+			font-size: 13px;
+			color: #999;
+			margin-left: 10px;
+		}
+
+		.comment p {
+			margin: 0;
+			color: #555;
+			line-height: 1.6;
+		}
+
+		.comment-form {
+			background: #f9f9f9;
+			padding: 30px;
+			border-radius: 5px;
+			margin-top: 30px;
+		}
+
+		.comment-form h4 {
+			font-size: 20px;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		.form-control {
+			border: 1px solid #ddd;
+			padding: 10px;
+			border-radius: 3px;
+			font-family: Arial, sans-serif;
+		}
+
+		.btn-primary {
+			background: #ff6b6b;
+			color: white;
+			padding: 10px 30px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		.btn-primary:hover {
+			background: #ff5252;
+		}
+
+		.sidebar-section {
+			background: #f9f9f9;
+			padding: 30px;
+			border-radius: 5px;
+		}
+
+		.recent-posts h4 {
+			font-size: 18px;
+			margin-bottom: 20px;
+			font-weight: bold;
+		}
+
+		.recent-posts ul {
+			list-style: none;
+			padding: 0;
+		}
+
+		.recent-posts li {
+			margin-bottom: 15px;
+		}
+
+		.recent-posts a {
+			color: #ff6b6b;
+			text-decoration: none;
+		}
+
+		.recent-posts a:hover {
+			text-decoration: underline;
+		}
+
+		.breadcrumb-section {
+			background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/img/blog-bg.jpg');
+			background-size: cover;
+			background-position: center;
+			padding: 80px 0;
+			color: white;
+			text-align: center;
+		}
+
+		.breadcrumb-text h1 {
+			font-size: 36px;
+			font-weight: bold;
+		}
+
+		.breadcrumb-text p {
+			font-size: 18px;
+		}
+
+		.alert {
+			padding: 15px;
+			margin-bottom: 20px;
+			border-radius: 3px;
+		}
+
+		.alert-danger {
+			background: #f8d7da;
+			color: #721c24;
+			border: 1px solid #f5c6cb;
+		}
+
+		.alert-success {
+			background: #d4edda;
+			color: #155724;
+			border: 1px solid #c3e6cb;
+		}
+
+		.mt-150 {
+			margin-top: 150px;
+		}
+
+		.mb-150 {
+			margin-bottom: 150px;
+		}
+
+		.mt-50 {
+			margin-top: 50px;
+		}
+
+		.mb-50 {
+			margin-bottom: 50px;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.php">
+								<img src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="index.php">Accueil</a>
+									<ul class="sub-menu">
+										<li><a href="index.php">Accueil</a></li>
+									</ul>
+								</li>
+								<li class="current-list-item"><a href="posts_list.php">Posts</a>
+									<ul class="sub-menu">
+										<li><a href="post.html">Lire un Post</a></li>
+										<li><a href="posts_list.php">Tous les Posts</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">À propos</a></li>
+								<li><a href="#">Pages</a>
+									<ul class="sub-menu">
+										<li><a href="404.html">Page 404</a></li>
+										<li><a href="about.html">À propos</a></li>
+										<li><a href="cart.html">Panier</a></li>
+										<li><a href="checkout.html">Passer la Commande</a></li>
+										<li><a href="contact.html">Contact</a></li>
+										<li><a href="news.html">Actualités</a></li>
+										<li><a href="shop.html">Boutique</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Repas</a>
+									<ul class="sub-menu">
+										<li><a href="meal_list.php">Repas</a></li>
+										<li><a href="ingredient_list.php">Ingrédients</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contact</a></li>
+								<li><a href="shop.html">Boutique</a>
+									<ul class="sub-menu">
+									<li><a href="shop.html">Boutique</a></li>
+									<li><a href="checkout.html">Passer la Commande</a></li>
+									<li><a href="single-product.html">Produit Unique</a></li>
+									<li><a href="cart.html">Panier</a></li>
+									</ul>
+								</li>
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Lire nos dernières actualités</p>
+						<h1>Bienvenue sur le Blog NutriMind</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- single article section -->
+	<div class="mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="single-article-section">
+						<div class="single-article-text">
+							<div class="single-artcile-bg">
+								<img src="assets/img/products/product-img-1.jpg" alt="Post Image">
+							</div>
+							<p class="blog-meta">
+								<span class="author"><i class="fas fa-user"></i> Admin User</span>
+								<span class="date"><i class="fas fa-calendar"></i> April 09, 2026</span>
+							</p>
+							<h2 style="margin-bottom: 20px; font-size: 28px; font-weight: bold;">Welcome to NutriMind Blog</h2>
+							<p>This is our first blog post about nutrition and healthy eating. NutriMind helps you manage your meals and ingredients effectively. Our platform provides comprehensive tools for nutritional management and meal planning.</p>
+							<p>In this post, we discuss the importance of tracking your daily nutrition intake, understanding macronutrients, and making informed dietary choices. Whether you're an athlete, a health enthusiast, or someone looking to improve your lifestyle, NutriMind is here to support your journey.</p>
+							<p>With our integrated meal planning system, you can easily create custom meal plans based on your nutritional needs. Our extensive ingredient database allows you to search and add items to your recipes with just a few clicks.</p>
+						</div>
+					</div>
+
+					<!-- Comments Section -->
+					<div class="comments-section">
+						<h3>Commentaires</h3>
+
+						<!-- Existing Comments Display -->
+						<div id="comments-list">
+							<p>Pas encore de commentaires. Soyez le premier à commenter!</p>
+						</div>
+
+						<!-- Comment Form -->
+						<div class="comment-form">
+							<h4>Laisser un Commentaire</h4>
+							<form action="add_comment.php" method="POST">
+								<input type="hidden" name="post_id" value="1">
+								<div class="form-group">
+									<textarea name="content" class="form-control" rows="4" placeholder="Écrivez votre commentaire ici..." required></textarea>
+								</div>
+								<button type="submit" class="btn btn-primary">Soumettre un Commentaire</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="sidebar-section">
+						<div class="recent-posts">
+							<h4>Posts Récents</h4>
+							<ul>
+								<li><a href="#">Post 1</a></li>
+								<li><a href="#">Post 2</a></li>
+								<li><a href="#">Post 3</a></li>
+								<li><a href="#">Post 4</a></li>
+								<li><a href="#">Post 5</a></li>
+							</ul>
+						</div>
+						<div class="recent-posts" style="margin-top: 30px;">
+							<h4>Navigation</h4>
+							<ul>
+								<li><a href="index.php">← Accueil</a></li>
+								<li><a href="#">Suivant Post →</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single article section -->
+
+	<!-- footer -->
+	<div class="footer-area" style="background: #f9f9f9; padding: 50px 0; margin-top: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;">À propos de nous</h2>
+						<p>NutriMind vous propose les meilleurs outils de gestion nutritionnelle. Trouvez tous les ingrédients et repas que vous recherchez.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;">Nous Contacter</h2>
+						<ul style="list-style: none; padding: 0;">
+							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+							<li>support@NutriMind.com</li>
+							<li>+00 111 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;">Pages</h2>
+						<ul style="list-style: none; padding: 0;">
+							<li><a href="index.php" style="color: #666; text-decoration: none;">Accueil</a></li>
+							<li><a href="about.html" style="color: #666; text-decoration: none;">À propos</a></li>
+							<li><a href="ingredient_list.php" style="color: #666; text-decoration: none;">Ingrédients</a></li>
+							<li><a href="meal_list.php" style="color: #666; text-decoration: none;">Repas</a></li>
+							<li><a href="contact.html" style="color: #666; text-decoration: none;">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title" style="font-size: 18px; font-weight: bold; margin-bottom: 15px;">S'abonner</h2>
+						<p>Abonnez-vous à notre liste de diffusion pour obtenir les dernières mises à jour.</p>
+						<form action="index.html">
+							<div style="display: flex;">
+								<input type="email" placeholder="Email" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 3px 0 0 3px;">
+								<button type="submit" style="background: #ff6b6b; color: white; border: none; padding: 8px 15px; border-radius: 0 3px 3px 0; cursor: pointer;"><i class="fas fa-paper-plane"></i></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+
+</body>
+</html>
