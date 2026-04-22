@@ -1,4 +1,4 @@
--- NutriMind – Schema for Posts & Comments
+-- NutriMind – Schema for Posts, Comments, Likes
 -- Import this file in phpMyAdmin (XAMPP) after selecting the `nutrimind` database.
 -- It assumes the existing `user` table already exists (with an `id` primary key).
 
@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
+    image_path VARCHAR(255) NULL,
     author_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -14,6 +15,11 @@ CREATE TABLE IF NOT EXISTS posts (
     INDEX idx_posts_author (author_id),
     INDEX idx_posts_created_at (created_at)
 );
+
+-- Add image_path column if upgrading from an older schema that doesn't have it.
+-- (MySQL 8+ supports IF NOT EXISTS; MariaDB 10.0+ as well.)
+ALTER TABLE posts
+    ADD COLUMN IF NOT EXISTS image_path VARCHAR(255) NULL AFTER content;
 
 -- Comments
 CREATE TABLE IF NOT EXISTS comments (
@@ -27,6 +33,21 @@ CREATE TABLE IF NOT EXISTS comments (
     INDEX idx_comments_post (post_id),
     INDEX idx_comments_user (user_id)
 );
+
+-- Likes (polymorphic: target_type = 'post' | 'comment')
+CREATE TABLE IF NOT EXISTS likes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    target_type ENUM('post','comment') NOT NULL,
+    target_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_likes_user FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
+    UNIQUE KEY uniq_user_target (user_id, target_type, target_id),
+    INDEX idx_likes_target (target_type, target_id)
+);
+
+-- Upload directory for post images must exist and be writable:
+-- views/uploads/posts/  (chmod 755)
 
 -- Sample seed data (optional – safe to re-run)
 INSERT INTO posts (title, content, author_id) VALUES
