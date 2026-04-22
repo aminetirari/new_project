@@ -67,6 +67,7 @@
 									</ul>
 								</li>
 								<li><a href="about.html">About</a></li>
+								<li><a href="posts_list.php">Blog</a></li>
 								<li><a href="#">Pages</a>
 									<ul class="sub-menu">
 										<li><a href="404.html">404 page</a></li>
