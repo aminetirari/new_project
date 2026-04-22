@@ -76,7 +76,7 @@ $activeNav = 'posts_create';
             <div class="col-lg-8 mx-auto">
                 <div class="card">
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="title" class="form-label fw-bold">Titre <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="title" name="title"
@@ -88,6 +88,12 @@ $activeNav = 'posts_create';
                                 <label for="content" class="form-label fw-bold">Contenu <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="content" name="content"
                                           rows="12" placeholder="Écrivez votre post ici..." required><?php echo htmlspecialchars($content); ?></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="image" class="form-label fw-bold">Photo (optionnel)</label>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/jpeg,image/png,image/gif,image/webp">
+                                <small class="text-secondary">JPG, PNG, GIF ou WEBP &middot; 5 Mo max</small>
                             </div>
 
                             <div class="d-flex justify-content-end gap-2">
